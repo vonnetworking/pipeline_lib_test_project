@@ -1,6 +1,10 @@
 @Library('mpl') _
 stage ('check this out') {
-   sh ''' echo HELLO WORLD!  - I JUST OVERRODE THE PIPELINE'''
+   steps {
+      step {
+         sh ''' echo HELLO WORLD!  - I JUST OVERRODE THE PIPELINE'''
+      }
+   }
 }
 MPLPipeline {
    /*
