@@ -12,8 +12,8 @@ MPLPipeline {
    */
    build_tool = 'gradle'
    // Gradle
-   gradle.tool_version = 6
-   gradle.tasks = 'build'
+   tool_version = 6
+   tasks = 'build'
    // Maven (default: Maven 3)
    // maven.goals = 'clean install'
    // maven_goals = 'clean install test'
