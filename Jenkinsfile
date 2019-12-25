@@ -1,4 +1,7 @@
 @Library('mpl') _
+stage ('check this out') {
+   sh ''' echo HELLO WORLD!  - I JUST OVERRODE THE PIPELINE'''
+}
 MPLPipeline {
    /*
     * Checkout
