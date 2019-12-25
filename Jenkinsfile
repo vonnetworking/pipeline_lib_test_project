@@ -3,7 +3,7 @@ MPLPipeline {
    /*
     * Checkout
     */
-    git.url = "https://github.com/vonnetworking/pipeline_lib_test_project.git"
+    git_url = "https://github.com/vonnetworking/pipeline_lib_test_project.git"
     // git.branch
     // git.project_name
     // git.project_key
