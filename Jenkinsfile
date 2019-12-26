@@ -22,6 +22,6 @@ pipeline {
                 echo ""
             }
         }
+        MPLPipelineV2 {}
     }
 }
-MPLPipelineV2 {}
