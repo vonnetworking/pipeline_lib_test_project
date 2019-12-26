@@ -1,4 +1,5 @@
 node {
+    label 'modp_jenkins_worker_jdk11'
     stage ("Checkout") {
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/vonnetworking/pipeline_lib_test_project.git']]])
     }
