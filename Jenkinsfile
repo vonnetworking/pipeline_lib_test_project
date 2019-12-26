@@ -1,27 +1,34 @@
-@Library('mpl') _
 pipeline {
     agent any
-
     stages {
-        stage('Look at me doing stuff I want to do, and not what you are supposed to be making me do!!') {
+        stage ("Checkout") {
             steps {
-                echo 'Delete all the stuffs and pass all scans!!'
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/vonnetworking/pipeline_lib_test_project.git']]])
+            }
+        }
+        stage ("Setup Env") {
+            steps {
+                script {
+                    envFileContents = readFile("${WORKSPACE}/manifest.yaml")
+                    config = readYaml file: "${WORKSPACE}/manifest.yaml"
+                    echo "Pipeline Version: " + config.pipeline_version
+                    echo "initializing MD pipeline common lib version " + config.pipeline_version
+                }
+                library 'MDPipeline@' + config.pipeline_version
+            }
+        }
+        stage ("Init") {
+            steps {
+                echo ""
             }
         }
     }
 }
-
-MPLPipeline {
-   /*
-    * Checkout
-    */
+/*MPLPipeline {
     git_url = "https://github.com/vonnetworking/pipeline_lib_test_project.git"
     // git.branch
     // git.project_name
     // git.project_key
-  /*
-   * Build
-   */
    build_tool = 'gradle'
    // Gradle
    tool_version = 6
@@ -29,4 +36,4 @@ MPLPipeline {
    // Maven (default: Maven 3)
    // maven.goals = 'clean install'
    // maven_goals = 'clean install test'
-}
+}*/
