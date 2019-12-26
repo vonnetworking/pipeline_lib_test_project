@@ -1,4 +1,4 @@
-pipeline_version: 1.0
+pipeline_version: v1.0
 build:
   - tool: maven
   - version: 3.6.3
