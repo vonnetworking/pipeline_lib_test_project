@@ -1,4 +1,4 @@
-pipeline_version: v1.1.2
+pipeline_version: back_in_black
 git_url: https://github.com/vonnetworking/pipeline_lib_test_project.git
 git_branch: master
 build_tool: maven
