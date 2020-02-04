@@ -4,4 +4,4 @@ git_branch: master
 build_tool_gradle: gradle
 gradle:
   placeholder: true
-  gradle_version: 'Gradle 5'
+  
